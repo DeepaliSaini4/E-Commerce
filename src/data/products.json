@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "A-Line Gown",
+    "image": "A-Line-Gown.webp"
+  },
+  {
+    "id": 2,
+    "name": "Off-Shoulder Dress",
+    "image": "Off-Shoulder-Dress.webp"
+  },
+  {
+    "id": 3,
+    "name": "Mermaid Evening Dress",
+    "image": "Mermaid-Evening-Dress.jpg"
+  },
+  {
+    "id": 4,
+    "name": "High-Low Dress",
+    "image": "High-Low-Dress.webp"
+  },
+  {
+    "id": 5,
+    "name": "Maxi Floral Dress",
+    "image": "Maxi-Floral-Dress.webp"
+  },
+  {
+    "id": 6,
+    "name": "Bodycon Dress",
+    "image": "Bodycon-Dress.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Trendy Wrap Midi Dress",
+    "image": "Trendy-Wrap-Midi-Dress.webp"
+  },
+  {
+    "id": 8,
+    "name": "Ruffled Cocktail Party Dress",
+    "image": "Ruffled-Cocktail-Party-Dress.avif"
+  },
+  {
+    "id": 9,
+    "name": "Sophisticated Sheath Dress",
+    "image": "Sophisticated-Sheath-Dress.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Charming Peplum Dress",
+    "image": "Charming-Peplum-Dress.webp"
+  }
+]
