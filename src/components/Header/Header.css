@@ -12,7 +12,19 @@
   margin: 0;
   font-size: 36px;
   color: var(--yellow);
+  font-family: "Playfair Display", serif; /* Elegant font */
+  font-weight: bold;
+  gap: 100px; /* Adds space between "Aurelle" and the quote */
 }
+
+.Header h1 i {
+  font-size: 26px; /* Slightly smaller for the quote */
+  font-family: "Dancing Script", cursive; /* Adds an artistic, stylish feel */
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
 
 button{
   border: none;
