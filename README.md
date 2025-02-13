@@ -30,6 +30,7 @@ A sleek and minimalistic e-commerce platform built with **React**, featuring a s
 ### 4️⃣ Updated Product List
 *Newly added products appear dynamically without a page refresh.*
 ![Added Product](public/assets/4.png)
+
 ---
 
 ## 🛠️ Tech Stack
