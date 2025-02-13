@@ -73,8 +73,9 @@ function App() {
     closeaddproduct();
   }
 
+  //React Fragments
   return (
-    <div>
+    <>
       <Header openCart={openCart} openaddproduct={openaddproduct} />
       <Products products = {products} onaddtocart={handleaddtocart} />
       <Cart
@@ -89,7 +90,7 @@ function App() {
         oncloseaddproduct={closeaddproduct}
         onaddproduct={handleaddproduct }
       />
-    </div>
+    </>
   );
 }
 export default App;

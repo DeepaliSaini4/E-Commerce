@@ -1,14 +1,18 @@
+import { createPortal } from "react-dom";
 import "./Modal.css";
 
-function Modal({show, onClose, children}) {
-    if(!show){
+function Modal({ show, onClose, children }) {
+    if (!show) {
         return null;
     }
-    return (
+
+    return createPortal(
         <div className="backdrop" onClick={onClose}>
-            <div className="Modal" onClick = {(event) => event.stopPropagation()}>
-                {children}</div>
+            <div className="Modal" onClick={(event) => event.stopPropagation()}>
+                {children}
             </div>
+        </div>,
+        document.body 
     );
 }
 
