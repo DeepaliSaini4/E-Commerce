@@ -2,13 +2,23 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import AddProduct from "./components/AddProduct/AddProduct";
+import initialproducts from "./data/products.json"; 
 
 function App() {
   const [showCart, setshowCart] = useState(false);
-  const [cartitems, setcartitems] = useState([]); //default value of the state is an empty array
+  const [showaddproduct, setshowaddproduct] = useState(false);
 
+  const [cartitems, setcartitems] = useState([]); //default value of the state is an empty array
+  const [products, setproducts] = useState(initialproducts);
+
+  //for adding product to cart
   const openCart = () => setshowCart(true);
   const closeCart = () => setshowCart(false);
+
+  //for adding product of own to website
+  const openaddproduct = () => setshowaddproduct(true);
+  const closeaddproduct = () => setshowaddproduct(false);
 
   const handleaddtocart = (productId, productName, productImage) => {
     const productincartindex = cartitems.findIndex(
@@ -55,14 +65,18 @@ function App() {
 
   return (
     <div>
-      <Header openCart={openCart} />
-      <Products onaddtocart={handleaddtocart} />
+      <Header openCart={openCart} openaddproduct={openaddproduct}/>
+      <Products products = {products} onaddtocart={handleaddtocart} />
       <Cart
         showCart={showCart}
         closeCart={closeCart}
         cartitems={cartitems}
         onincreasequantity={handleincreasequantity}
         ondecreasequantity={handledecreasequantity}
+      />
+      <AddProduct 
+        showaddproduct={showaddproduct}
+        oncloseaddproduct={closeaddproduct}
       />
     </div>
   );

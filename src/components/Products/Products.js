@@ -1,4 +1,3 @@
-import ProductsData from "../../data/products.json";
 import "./Products.css";
 
 function Product({ id, name, image, onaddtocart}) {
@@ -15,10 +14,10 @@ function Product({ id, name, image, onaddtocart}) {
   );
 }
 
-function Products({ onaddtocart }) {
+function Products({ products, onaddtocart }) {
   return (
     <div className="Products-container">
-      {ProductsData.map((product) => (
+      {products.map((product) => (
         <Product key={product.id} id={product.id} name={product.name} image={product.image}
         onaddtocart = {(id, name, image) => onaddtocart(id, name, image)} />
       ))}
