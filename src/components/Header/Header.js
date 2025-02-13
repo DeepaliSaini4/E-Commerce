@@ -1,6 +1,6 @@
 import "./Header.css";
 
-function Header({ openCart, openaddproduct}) {
+function Header({ openCart, openaddproduct,onddproduct}) {
   return (
     <div className="Header">
       <h1>

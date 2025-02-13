@@ -63,9 +63,19 @@ function App() {
     setcartitems(updatedcartitems);
   };
 
+  const handleaddproduct = (productName) => {
+    const product = {
+      id: products.length+1,
+      name: productName,
+      image: "default.jpg",
+    };
+    setproducts((state) => [...state,product]);
+    closeaddproduct();
+  }
+
   return (
     <div>
-      <Header openCart={openCart} openaddproduct={openaddproduct}/>
+      <Header openCart={openCart} openaddproduct={openaddproduct} />
       <Products products = {products} onaddtocart={handleaddtocart} />
       <Cart
         showCart={showCart}
@@ -77,6 +87,7 @@ function App() {
       <AddProduct 
         showaddproduct={showaddproduct}
         oncloseaddproduct={closeaddproduct}
+        onaddproduct={handleaddproduct }
       />
     </div>
   );
