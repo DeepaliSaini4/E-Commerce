@@ -12,7 +12,7 @@ function App() {
 
   const handleaddtocart = (productId, productName, productImage) => {
     const productincartindex = cartitems.findIndex(
-      (item) => item.id == productId
+      (item) => item.id === productId
     );
     if (productincartindex == -1) {
       const cartitem = {
@@ -22,20 +22,48 @@ function App() {
         quantity: 1,
       };
       setcartitems((state) => [...state, cartitem]);
-    }else{
-      const updatedcartitmes = [...cartitems];
-      updatedcartitmes[productincartindex].quantity += 1; 
-      setcartitems(updatedcartitmes);
+    } else {
+      const updatedcartitems = [...cartitems];
+      updatedcartitems[productincartindex].quantity += 1;
+      setcartitems(updatedcartitems);
     }
   };
-
-
+  const handleincreasequantity = (productId) => {
+    const productincartindex = cartitems.findIndex(
+      (item) => item.id === productId
+    );
+    const updatedcartitems = [...cartitems];
+    updatedcartitems[productincartindex].quantity += 1;
+    setcartitems(updatedcartitems);
+  };
+  const handledecreasequantity = (productId) => {
+    const productincartindex = cartitems.findIndex(
+      (item) => item.id === productId
+    );
+    const qty = cartitems[productincartindex].quantity;
+    let updatedcartitems = [...cartitems];
+    
+    if (qty == 1) {
+       updatedcartitems = updatedcartitems.filter(
+        (item) => item.id !== productId
+      );
+    } else {
+      updatedcartitems[productincartindex].quantity -= 1;
+    }
+    setcartitems(updatedcartitems);
+  };
 
   return (
     <div>
       <Header openCart={openCart} />
       <Products onaddtocart={handleaddtocart} />
-      <Cart showCart={showCart} closeCart={closeCart} cartitems={cartitems} />
+      <Cart
+        showCart={showCart}
+        closeCart={closeCart}
+        cartitems={cartitems}
+        onincreasequantity={handleincreasequantity}
+        ondecreasequantity={handledecreasequantity}
+      />
     </div>
   );
 }
